@@ -1,7 +1,7 @@
-# geekineers/osx-lamp-laravel-php7
+# geekineers/lamp-laravel-php7
 ---
 
-Docker image with LAMP and Laravel installed. OSX compatible version of: [geekineers/lamp-laravel-php7](https://)
+Docker image with LAMP and Laravel installed. Linux compatible version of: [geekineers/osx-lamp-laravel-php7](https://)
 
 Mount your Laravel project host directory to `/var/www/app`:
 
@@ -26,4 +26,4 @@ Access phpmyadmin via: http://localhost:<port>/phpmyadmin
 
 If phpmyadmin have errors, look for the "Find out why." link and click on it, then click on the link: "Create a database named `phpmyadmin` and setup the phpMyAdmin configuration storage there."
 
-Don't forget to adjust the diretory in `/etc/apache2/sites-available/app.local.conf` to point to you laravel project's `public` directory
+Don't forget to adjust the diretory in `/etc/apache2/sites-available/app.local.conf` to point to your laravel project's `public` directory

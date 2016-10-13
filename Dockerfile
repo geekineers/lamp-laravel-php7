@@ -9,17 +9,6 @@ ENV DBUSER=root
 ENV DBPASS=root
 ENV APPPORT=4567
 
-# START: FIX OSX permissions
-ENV BOOT2DOCKER_ID 1000
-ENV BOOT2DOCKER_GID 50
-
-# Tweaks to give Apache/PHP write permissions to the app
-RUN usermod -u ${BOOT2DOCKER_ID} www-data && \
-    usermod -G staff www-data
-RUN groupmod -g $(($BOOT2DOCKER_GID + 10000)) $(getent group $BOOT2DOCKER_GID | cut -d: -f1)
-RUN groupmod -g ${BOOT2DOCKER_GID} staff
-# END: FIX OSX permissions
-
 # Update repo and install lamp, php, php dependencies, and phpmyadmin
 RUN apt-get update --fix-missing && \
     apt-get -y install apt-utils && \
